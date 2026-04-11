@@ -1,11 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <title>VACUM</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VACUM</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 배경 */
+.intro {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('vacum_background_v1.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 어둡게 덮기 (브랜드 느낌 핵심) */
+.intro::after {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.45);
+}
+
+/* 텍스트 */
+.content {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 64px;
+    letter-spacing: 10px;
+    font-weight: 300;
+}
+
+.desc {
+    margin-top: 20px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+/* 버튼 */
+.enter {
+    margin-top: 40px;
+    padding: 12px 30px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.enter:hover {
+    background: white;
+    color: black;
+}
+</style>
 </head>
+
 <body>
-    <h1>VACUM </h1>
-    <p>VACUM Wear VACUM.</p>
-        <p> From Another World.</p>
+
+<div class="intro">
+    <div class="content">
+        <div class="logo">VACUM</div>
+        <div class="desc">
+            Built on the remains of a collapsed world.<br>
+            Survival is not a choice. It is structure.
+        </div>
+        <button class="enter">ENTER</button>
+    </div>
+</div>
+
 </body>
 </html>
