@@ -1,78 +1,64 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VACUM - Intro</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VACUM</title>
 
-        body, html {
-            height: 100%;
-            background-color: #000;
-            overflow: hidden;
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* 배경 레이어 수정 */
-        .bg-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            /* ❗ 파일명이 정확히 일치해야 합니다 (대소문자/확장자 확인) */
-            background-image: url('./vacum_background_v1.png'); 
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            z-index: -1;
-            filter: brightness(0.7);
-        }
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
 
-        .content {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-        }
+/* 배경 */
+.intro {
+    width: 100%;
+    height: 100vh;
+    background: url('vacum_background_v1.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        h1 {
-            font-size: clamp(2rem, 8vw, 4rem); /* 반응형 폰트 크기 */
-            letter-spacing: 0.8rem;
-            font-weight: 200;
-            margin-bottom: 1rem;
-            animation: fadeIn 2s ease-in-out;
-        }
+/* 살짝 어둡게 */
+.intro::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+}
 
-        p {
-            font-size: 1rem;
-            letter-spacing: 0.2rem;
-            opacity: 0.6;
-            animation: fadeIn 3s ease-in-out;
-        }
+/* 로고 */
+.logo {
+    position: relative;
+    z-index: 1;
+    width: 220px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+.logo:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="bg-container"></div>
-
-    <div class="content">
-        <h1>VACUM</h1>
-        <p>Entering the atmosphere...</p>
-    </div>
+<div class="intro">
+    <a href="main.html">
+        <img src="logo.png" class="logo">
+    </a>
+</div>
 
 </body>
 </html>
