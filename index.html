@@ -53,12 +53,17 @@
     }
 
     .brand {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      white-space: nowrap;
-      color: #000;
-    }
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand-logo {
+  display: block;
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
 
     .menu {
       display: flex;
@@ -281,14 +286,14 @@
     }
 
     @media (max-width: 768px) {
-      .topbar-inner {
-        padding: 16px 18px;
-        flex-wrap: wrap;
-      }
+  .topbar-inner {
+    padding: 16px 18px;
+    flex-wrap: wrap;
+  }
 
-      .brand {
-        font-size: 1.5rem;
-      }
+  .brand-logo {
+    height: 34px;
+  }
 
       .mobile-menu-btn {
         display: block;
@@ -356,7 +361,9 @@
   <div class="site-wrap">
     <header class="topbar">
       <div class="topbar-inner">
-        <a href="#" class="brand">VACUM</a>
+        <a href="#" class="brand">
+  <img src="logo.png" alt="VACUM 로고" class="brand-logo" />
+</a>
         <button class="mobile-menu-btn" aria-label="메뉴 열기" onclick="toggleMenu()">☰</button>
         <nav class="menu" id="mobileMenu">
           <a href="#world">World</a>
